@@ -1,0 +1,12 @@
+#mapred example
+
+
+
+# simple sorting
+cd desktop/sister
+
+javac -cp $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-client-core-3.1.0.jar:$HADOOP_HOME/share/hadoop/common/hadoop-common-3.1.0.jar -d exec *.java
+
+jar -cvf SortValues.jar -C exec/ .
+
+hadoop jar SortValues.jar SortValues /sort /output2
